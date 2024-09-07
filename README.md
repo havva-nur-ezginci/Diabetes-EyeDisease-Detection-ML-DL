@@ -36,7 +36,7 @@ Kullanılan Yöntemler:
 - Eğitim için Google Colab GPU kullanılmıştır.
 
 # Yayınlar ve Sunumlar
-Bu projeyle ilgili sunum 9. Uluslararası Bilimsel Çalışmalar Kongresi'nde (UBCAK) gerçekleştirilmiştir:
+Bu projeyle ilgili sunum 9. Uluslararası Bilimsel Çalışmalar Kongresi'nde (UBCAK) gerçekleştirilmiştir: [UBCAK9 pdf](https://www.ubcakcongress.org/ubcak9_tam_metin.pdf)
 ### Göz Fundus Görüntülerinden Diyabetin Sebep Olduğu Göz Hastalıklarının Tespiti
 DEMİRCAN SEMİYE, Ezginci Havva Nur (03.08.2022-05.08.2022), Yayın Yeri: 9. Uluslararası Bilimsel Çalışmalar Kongresi (UBCAK)
 <br>Yayın Türü: Ulusal Tam Metin Bildiri (Basılı + Elektronik)

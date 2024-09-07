@@ -23,7 +23,7 @@ Test setinde en yüksek doğruluk oranı %81 ile **Logistic Regression** modelin
 ## 2. Göz Hastalığı Tespiti
 [Göz Hastalığı Tespiti](https://github.com/havva-nur-ezginci/DiyabetTespiti-ve-DiyabeteBagliOlusanGozHastaliklarininTespiti-MakineOgrenmesi-DerinOgrenme)
 
-Bu bölümde, diyabete bağlı olarak gelişen göz hastalıklarının tespitine odaklanılmıştır. Kaggle'dan alınan Ocular Disease Recognition veri seti kullanılarak göz hastalıkları tespit edilmiştir.
+Bu bölümde, diyabete bağlı olarak gelişen göz hastalıklarının tespitine odaklanılmıştır. Kaggle'dan alınan [Ocular Disease Recognition](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k) veri seti kullanılarak göz hastalıkları tespit edilmiştir.
 Tespit Edilen Sınıflar:
 - Normal
 - Diyabetik Retinopati

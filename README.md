@@ -3,7 +3,7 @@
 Bu proje, diyabetin ve diyabete bağlı göz hastalıklarının tespitini gerçekleştirmek için makine öğrenmesi ve derin öğrenme yöntemlerinin uygulanmasını içermektedir. Çalışma iki ana başlık altında toplanmıştır: diyabet tespiti ve göz hastalığı tespiti.
 
 ## 1. Diyabet Tespiti
-[Diyabet Tespiti](https://github.com/havva-nur-ezginci/DiyabetTespiti-ve-DiyabeteBagliOlusanGozHastaliklarininTespiti-MakineOgrenmesi-DerinOgrenme/blob/main/Diyabet_Tespiti/DiyabetTahminModelleri.ipynb)
+[Diyabet Tespiti](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Diyabet_Tespiti/DiyabetTahminModelleri.ipynb)
 
 Bu bölümde, Kaggle'dan alınan kan değerleri veri seti kullanılarak çeşitli makine öğrenmesi modelleri ile diyabet tespiti yapılmıştır. Kullanılan modeller ve yöntemler aşağıda listelenmiştir:
 
@@ -20,7 +20,7 @@ Kullanılan Modeller:
 Test setinde en yüksek doğruluk oranı %81 ile **Logistic Regression** modelinden elde edilmiştir.
 
 ## 2. Göz Hastalığı Tespiti
-[Göz Hastalığı Tespiti](https://github.com/havva-nur-ezginci/DiyabetTespiti-ve-DiyabeteBagliOlusanGozHastaliklarininTespiti-MakineOgrenmesi-DerinOgrenme)
+[Göz Hastalığı Tespiti](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL)
 
 Bu bölümde, diyabete bağlı olarak gelişen göz hastalıklarının tespitine odaklanılmıştır. Kaggle'dan alınan [Ocular Disease Recognition](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k) veri seti kullanılarak göz hastalıkları tespit edilmiştir.
 

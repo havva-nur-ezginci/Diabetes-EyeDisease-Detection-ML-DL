@@ -1,4 +1,5 @@
 # Diyabet ve Diyabete Bağlı Göz Hastalıkları Tespiti: Makine ve Derin Öğrenme Yöntemleri
+[![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue?logo=kaggle)](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k)
 
 Bu proje, diyabetin ve diyabete bağlı göz hastalıklarının tespitini gerçekleştirmek için makine öğrenmesi ve derin öğrenme yöntemlerinin uygulanmasını içermektedir. Çalışma iki ana başlık altında toplanmıştır: diyabet tespiti ve göz hastalığı tespiti.
 
@@ -14,6 +15,25 @@ Bu projede, Kaggle'dan alınan kan değerleri veri seti kullanılarak diyabet te
 
 - **Kaynak**: [Diabetes](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Diyabet_Tespiti/Dataset/Diyabet/diabetes.csv) veri seti projeye eklenerek kullanılmıştır.
 - **Bölme**: Veri seti %80 eğitim, %20 test olarak ayrılmıştır.
+
+<details> 
+  <summary>Learn More</summary> 
+  <p>Bu veri seti, 768 örnek içermektedir. Bu örneklerden 500'ü diyabet bulunmayan (0) ve 268'i diyabetli (1) olarak etiketlenmiştir. Etiketler, 0 diyabetin olmadığını, 1 ise diyabetin varlığını ifade eder.
+   Veri seti, Ulusal Diyabet, Sindirim ve Böbrek Hastalıkları Enstitüsü'nden alınmış olup, hastaların belirli tanısal ölçümlere dayanarak diyabetli olup olmadıklarının tahmin edilmesini amaçlamaktadır. Tüm
+   hastalar, Pima Kızılderili mirasına sahip en az 21 yaşında kadınlardır.</p>
+   
+   <h3>Veri Seti Özellikleri</h3>
+   <ul>
+    <li><strong>Pregnancy</strong>: Hamile kalma sayısı</li>
+    <li><strong>Glucose</strong>: Plazma glukoz konsantrasyonu</li>
+    <li><strong>Blood Pressure</strong>: Diyastolik kan basıncı (mm Hg)</li>
+    <li><strong>Insulin</strong>: Serum insülin seviyeleri (mu U/ml)</li>
+    <li><strong>BMI</strong>: Vücut kitle indeksi (ağırlık (kg) / boy (m)^2)</li>
+    <li><strong>Diabetes Pedigree Function</strong>: Diyabet soy ağacı işlevi</li>
+    <li><strong>Age</strong>: Yaş (yıl)</li>
+    <li><strong>Outcome</strong>: Sınıf değişkeni (0: Hasta değil, 1: Hasta)</li>
+   </ul>
+</details>
 
 ### Kullanılan Modeller
 
@@ -120,15 +140,28 @@ Diyabet (şeker hastalığı) obezite, hareketsiz yaşam, dengesiz beslenme, ile
 
 
 ## Veri Seti
+[![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue?logo=kaggle)](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k)
 
 Proje, [Ocular Disease Recognition](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k) veri setini kullanmaktadır. 
 
+
+<details>
+  <summary>Learn More</summary>
+
+ODIR veri seti, 2019 yılında Shanggong Medical Technology Co., Ltd. tarafından Çin'deki hastanelerden/tıp merkezlerinden toplanmıştır. 5.000 hastanın fundus fotoğraflarını içeren bu veri seti, sekiz farklı göz hastalığını kapsar: Normal (N), Diyabet (D), Glokom (G), Katarakt (C), Yaşa Bağlı Makula Dejenerasyonu (A), Hipertansif Retinopati (H), Miyopi (M) ve diğer hastalıklar (O). 
+
+Bu çalışmada Diyabetik Retinopati, Katarakt, Glokom ve Normal sınıfları kullanılmıştır.
+</details>
+
 Tespit Edilen Sınıflar:
 
-- Normal
-- Diyabetik Retinopati
-- Katarakt
-- Glokom
+- **Normal**: Sağlıklı göz
+- **Diyabetik Retinopati**: Diyabetin neden olduğu retina hasarı
+- **Katarakt**: Göz merceğinin bulanıklaşması
+- **Glokom**: Göz içi basıncının artmasıyla meydana gelen optik sinir hasarı
+
+Veri setinden alınmış örnek fundus fotoğrafları:
+![Örnek fundus fotoğrafı](https://github.com/user-attachments/assets/fb9cba79-2580-48d3-9a4b-a5ef23367321)
   
 ## Kullanılan Yöntemler:
 

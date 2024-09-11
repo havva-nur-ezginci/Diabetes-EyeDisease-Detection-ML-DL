@@ -12,7 +12,7 @@ Bu projede, Kaggle'dan alınan kan değerleri veri seti kullanılarak diyabet te
 
 ### Kullanılan Veri Seti
 
-- **Kaynak**: Kaggle
+- **Kaynak**: [Diabetes](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Diyabet_Tespiti/Dataset/Diyabet/diabetes.csv) veri seti projeye eklenerek kullanılmıştır.
 - **Bölme**: Veri seti %80 eğitim, %20 test olarak ayrılmıştır.
 
 ### Kullanılan Modeller
@@ -32,13 +32,64 @@ Projede aşağıdaki makine öğrenmesi modelleri kullanılmıştır:
 ### Yöntemler ve İyileştirmeler
 
 1. **Veri ön işleme** adımı kapsamında, model eğitiminin daha tutarlı ve dengeli olmasını sağlamak amacıyla **StandardScaler** kullanılarak sayısal değişkenler ölçeklendirildi. Bu işlem, her bir değişkenin ortalamasını 0, standart sapmasını 1 yaparak, farklı büyüklüklerdeki verilerin model üzerinde eşit etkiye sahip olmasını sağladı.
-2. **Karar Ağacı**: Aşırı öğrenmeyi önlemek için max_depth parametresi ile sınırlama yapılmıştır. 
+2. **Karar Ağacı**: Aşırı öğrenmeyi önlemek için max_depth parametresi ile sınırlama yapılmıştır. Karar ağacının özellikler için vermiş olduğu önem değerleri incelenmiştir. Her özellik için 0 ile 1 arasında bir sayıdır; 0=>"hiç kullanılmamış" ve 1 => "hedefi mükemmel şekilde tahmin ediyor" anlamına gelir. Alınan sonuçlar için matplotlib.pyplot kullanarak grafik çizdirilmiş ve değerler Tablo 1 de görselleştirilmiştir:
+
+**Tablo 1: Karar Ağacı Sonucunda Alınan Özellik Önem Değerleri:**
+<table>
+  <tr>
+    <td>
+      <table border="1">
+        <tr>
+          <th>Özellik</th>
+          <th>Önem Değeri</th>
+        </tr>
+        <tr>
+          <td>Pregnancy</td>
+          <td>0.01147274</td>
+        </tr>
+        <tr>
+          <td>Glucose</td>
+          <td>0.37701637</td>
+        </tr>
+        <tr>
+          <td>Blood Pressure</td>
+          <td>0.07524925</td>
+        </tr>
+        <tr>
+          <td>SkinThickness</td>
+          <td>0.06196233</td>
+        </tr>
+        <tr>
+          <td>Insulin</td>
+          <td>0.06910943</td>
+        </tr>
+        <tr>
+          <td>BMI</td>
+          <td>0.19682277</td>
+        </tr>
+        <tr>
+          <td>Diabetes Pedigree</td>
+          <td>0.05909082</td>
+        </tr>
+        <tr>
+          <td>Age</td>
+          <td>0.1492763</td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <img src="https://github.com/user-attachments/assets/302eb5b7-c5db-4815-b925-26371336637c" alt="3-Karar Ağacı özellik önem grafiği" >
+    </td>
+  </tr>
+</table>
+
+  
 3. **K-Fold Cross Validation**: Modellerin doğruluğunu artırmak için K-fold çapraz doğrulama yöntemi kullanılmıştır. 5, 10, 15, 20, 25 ve 30 fold değerleri ile çapraz doğrulama yapılmış, her bir modelin maksimum, minimum ve ortalama doğruluk oranları incelenmiştir.
 4. **Model Başarımlarının İncelenmesi**: Logistic Regression, Perceptron, MLPClassifier, Decision Tree, KNeighborsClassifier, SVC, GaussianNB, Random Forest modelleri kullanılarak doğruluk değerleri analiz edilmiştir.
 
 ### Eğitim ve Test Sonuçları
 
-Tablo : Diyabet testpiti için farklı modellerin 80:20 ayrılan veri seti eğitim ve test sonuçlarını göstermektedir:
+Tablo2 : Diyabet testpiti için farklı modellerin 80:20 ayrılan veri seti eğitim ve test sonuçlarını göstermektedir:
 
 | Model                     | Eğitim Sonuçları | Test Sonuçları |
 |---------------------------|------------------|----------------|
@@ -65,8 +116,8 @@ Test setinde en yüksek doğruluk oranı **%81** ile **Logistic Regression** mod
 
 ## Göz Hastalığı Tespiti
 
-Diyabet (şeker hastalığı) obezite, hareketsiz yaşam, dengesiz beslenme, ileri yaş, stres gibi olumsuz yaşam şartlarıyla beraber son yıllarda görülme sıklığının artmasıyla birlikte birçok önemli hastalığa da zemin hazırlamaktadır. Erken dönemde hastalığın fark edilememesi görme kayıplarına ve ileriki aşamalarda körlüğe kadar gitmektedir. Diyabetik retinopati, katarakt ve glokom hastalıklarının tespitinde göz fundus görüntülerinden sıkça yararlanılır. Bu projede diyabetin sebep olduğu göz hastalıklarından bazıları diyabetik retinopati, katarakt ve glokom hastalıklarının tespiti yapılmıştır. Çalışmada Kaggle'dan alınan **Ocular Disease Intelligent Recognition (ODIR)** veri seti kullanılmıştır. Veri seti içerisinden **normal, diyabetik retinopati, katarakt ve glokom** sınıfları seçilerek çalışma gerçekleştirilmiştir. Elde edilen veriler ilk hali haricinde farklı veri artırma yöntemleri kullanılarak dengeli veri setleri oluşturulmuştur. Oluşturulan veri setleri state of the art olarak bilinen **VGG16, VGG19** modelleri 
-üzerinde **Stochastic Gradient Descent (SGD), Adaptive Gradient Algorithm (Adagrad), Adaptive Moment Estimation (Adam)** optimizerları kullanılarak eğitimler gerçekleştirilmiştir. Farklı modellerin performansı karşılaştırılmış, en iyi sonucu veren model belirlenmiştir. Sonuç olarak elde edilen en yüksek başarı oranı **ADASYN** yöntemi ile artırılan veri setinin **VGG16** modelini **Adam** optimizerı ile eğittiğimizde test verisi üzerinde %86 başarı ve %43 hata oranı elde edilmiştir.
+Diyabet (şeker hastalığı) obezite, hareketsiz yaşam, dengesiz beslenme, ileri yaş, stres gibi olumsuz yaşam şartlarıyla beraber son yıllarda görülme sıklığının artmasıyla birlikte birçok önemli hastalığa da zemin hazırlamaktadır. Erken dönemde hastalığın fark edilememesi görme kayıplarına ve ileriki aşamalarda körlüğe kadar gitmektedir. Diyabetik retinopati, katarakt ve glokom hastalıklarının tespitinde göz fundus görüntülerinden sıkça yararlanılır. Bu projede diyabetin sebep olduğu göz hastalıklarından bazıları diyabetik retinopati, katarakt ve glokom hastalıklarının tespiti yapılmıştır. Çalışmada Kaggle'dan alınan **Ocular Disease Intelligent Recognition (ODIR)** veri seti kullanılmıştır. Veri seti içerisinden **normal, diyabetik retinopati, katarakt ve glokom** sınıfları seçilerek çalışma gerçekleştirilmiştir. Elde edilen veriler ilk hali haricinde farklı veri artırma yöntemleri kullanılarak dengeli veri setleri oluşturulmuştur. Oluşturulan veri setleri state of the art olarak bilinen **VGG16, VGG19,ResNet50,AlexNet** modelleri 
+üzerinde **Stochastic Gradient Descent (SGD), Adaptive Gradient Algorithm (Adagrad), Adaptive Moment Estimation (Adam), RMSprop, Adadelta** optimizerları kullanılarak eğitimler gerçekleştirilmiştir. Farklı modellerin performansı karşılaştırılmış, en iyi sonucu veren model belirlenmiştir. Sonuç olarak elde edilen en yüksek başarı oranı **ADASYN** yöntemi ile artırılan veri setinin **VGG16** modelini **Adam** optimizerı ile eğittiğimizde test verisi üzerinde %86 başarı ve %43 hata oranı elde edilmiştir.
 
 
 ## Veri Seti

@@ -17,7 +17,8 @@ Bu projede, Kaggle'dan alınan kan değerleri veri seti kullanılarak diyabet te
 - **Bölme**: Veri seti %80 eğitim, %20 test olarak ayrılmıştır.
 
 <details> 
-  <summary>Learn More</summary> 
+  <summary><strong>Learn More</strong></summary> 
+  <br>
   <p>Bu veri seti, 768 örnek içermektedir. Bu örneklerden 500'ü diyabet bulunmayan (0) ve 268'i diyabetli (1) olarak etiketlenmiştir. Etiketler, 0 diyabetin olmadığını, 1 ise diyabetin varlığını ifade eder.
    Veri seti, Ulusal Diyabet, Sindirim ve Böbrek Hastalıkları Enstitüsü'nden alınmış olup, hastaların belirli tanısal ölçümlere dayanarak diyabetli olup olmadıklarının tahmin edilmesini amaçlamaktadır. Tüm
    hastalar, Pima Kızılderili mirasına sahip en az 21 yaşında kadınlardır.</p>
@@ -146,7 +147,7 @@ Proje, [Ocular Disease Recognition](https://www.kaggle.com/datasets/andrewmvd/oc
 
 
 <details>
-  <summary>Learn More</summary>
+   <summary><strong>Learn More</strong></summary> 
 
 ODIR veri seti, 2019 yılında Shanggong Medical Technology Co., Ltd. tarafından Çin'deki hastanelerden/tıp merkezlerinden toplanmıştır. 5.000 hastanın fundus fotoğraflarını içeren bu veri seti, sekiz farklı göz hastalığını kapsar: Normal (N), Diyabet (D), Glokom (G), Katarakt (C), Yaşa Bağlı Makula Dejenerasyonu (A), Hipertansif Retinopati (H), Miyopi (M) ve diğer hastalıklar (O). 
 

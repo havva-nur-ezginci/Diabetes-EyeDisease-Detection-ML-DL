@@ -36,7 +36,20 @@ Projede aşağıdaki makine öğrenmesi modelleri kullanılmıştır:
 3. **K-Fold Cross Validation**: Modellerin doğruluğunu artırmak için K-fold çapraz doğrulama yöntemi kullanılmıştır. 5, 10, 15, 20, 25 ve 30 fold değerleri ile çapraz doğrulama yapılmış, her bir modelin maksimum, minimum ve ortalama doğruluk oranları incelenmiştir.
 4. **Model Başarımlarının İncelenmesi**: Logistic Regression, Perceptron, MLPClassifier, Decision Tree, KNeighborsClassifier, SVC, GaussianNB, Random Forest modelleri kullanılarak doğruluk değerleri analiz edilmiştir.
 
-### Sonuçlar
+### Eğitim ve Test Sonuçları
+
+Tablo : Diyabet testpiti için farklı modellerin 80:20 ayrılan veri seti eğitim ve test sonuçlarını göstermektedir:
+
+| Model                     | Eğitim Sonuçları | Test Sonuçları |
+|---------------------------|------------------|----------------|
+| **Perceptron**                | 0.72             | 0.79           |
+| **MLP**                       | 0.82             | 0.77           |
+| **Karar Ağacı**               | 0.85             | 0.78           |
+| **Logistic Regression**       | 0.76             |**0.81**           |
+| **K-Nearest Neighbors (KNN)**  | 0.78             | 0.80           |
+| **Support Vector Classifier (SVC)** | 0.76         | 0.79           |
+| **Gaussian Naive Bayes**      | 0.74             | 0.78           |
+| **Random Forest Classifier**  | 0.98             | 0.79           |
 
 Test setinde en yüksek doğruluk oranı **%81** ile **Logistic Regression** modelinden elde edilmiştir.
 
@@ -52,28 +65,82 @@ Test setinde en yüksek doğruluk oranı **%81** ile **Logistic Regression** mod
 
 ## Göz Hastalığı Tespiti
 
-Diyabet (şeker hastalığı) obezite, hareketsiz yaşam, dengesiz beslenme, ileri yaş, stres gibi olumsuz yaşam şartlarıyla beraber son yıllarda görülme sıklığının artmasıyla birlikte birçok önemli hastalığa da zemin hazırlamaktadır. Erken dönemde hastalığın fark edilememesi görme kayıplarına ve ileriki aşamalarda körlüğe kadar gitmektedir. Diyabetik retinopati, katarakt ve glokom hastalıklarının tespitinde göz fundus görüntülerinden sıkça yararlanılır. Bu projede diyabetin sebep olduğu göz hastalıklarından bazıları diyabetik retinopati, katarakt ve glokom hastalıklarının tespiti yapılmıştır. Çalışmada **Ocular Disease Intelligent Recognition (ODIR)** veri seti kullanılmıştır. Veri seti içerisinden **normal, diyabetik retinopati, katarakt ve glokom** sınıfları seçilerek çalışma gerçekleştirilmiştir. Elde edilen veriler ilk hali haricinde farklı veri artırma yöntemleri kullanılarak dengeli veri setleri oluşturulmuştur. Oluşturulan veri setleri state of the art olarak bilinen **VGG16, VGG19** modelleri üzerinde **Stochastic Gradient Descent (SGD), Adaptive Gradient Algorithm (Adagrad), Adaptive Moment Estimation (Adam)** optimizerları kullanılarak eğitimler gerçekleştirilmiştir. Sonuç olarak elde edilen en yüksek başarı oranı **ADASYN** yöntemi ile artırılan veri setinin **VGG16** modelini **Adam** optimizerı ile eğittiğimizde test verisi üzerinde %86 başarı ve %43 hata oranı elde edilmiştir.
+Diyabet (şeker hastalığı) obezite, hareketsiz yaşam, dengesiz beslenme, ileri yaş, stres gibi olumsuz yaşam şartlarıyla beraber son yıllarda görülme sıklığının artmasıyla birlikte birçok önemli hastalığa da zemin hazırlamaktadır. Erken dönemde hastalığın fark edilememesi görme kayıplarına ve ileriki aşamalarda körlüğe kadar gitmektedir. Diyabetik retinopati, katarakt ve glokom hastalıklarının tespitinde göz fundus görüntülerinden sıkça yararlanılır. Bu projede diyabetin sebep olduğu göz hastalıklarından bazıları diyabetik retinopati, katarakt ve glokom hastalıklarının tespiti yapılmıştır. Çalışmada Kaggle'dan alınan **Ocular Disease Intelligent Recognition (ODIR)** veri seti kullanılmıştır. Veri seti içerisinden **normal, diyabetik retinopati, katarakt ve glokom** sınıfları seçilerek çalışma gerçekleştirilmiştir. Elde edilen veriler ilk hali haricinde farklı veri artırma yöntemleri kullanılarak dengeli veri setleri oluşturulmuştur. Oluşturulan veri setleri state of the art olarak bilinen **VGG16, VGG19** modelleri 
+üzerinde **Stochastic Gradient Descent (SGD), Adaptive Gradient Algorithm (Adagrad), Adaptive Moment Estimation (Adam)** optimizerları kullanılarak eğitimler gerçekleştirilmiştir. Farklı modellerin performansı karşılaştırılmış, en iyi sonucu veren model belirlenmiştir. Sonuç olarak elde edilen en yüksek başarı oranı **ADASYN** yöntemi ile artırılan veri setinin **VGG16** modelini **Adam** optimizerı ile eğittiğimizde test verisi üzerinde %86 başarı ve %43 hata oranı elde edilmiştir.
 
-### Kullanılan Veri Seti
 
-- **Kaynak**:  [Ocular Disease Recognition](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k)
-- **Bölme**: Veri seti %80 eğitim, %20 test olarak ayrılmıştır.
+## Veri Seti
 
-Bu bölümde, diyabete bağlı olarak gelişen göz hastalıklarının tespitine odaklanılmıştır. Kaggle'dan alınan veri seti kullanılarak göz hastalıkları tespit edilmiştir.
-
-Gerçekleştirilen çalışmada en iyi sınıflandırma sonucu ADASYN sentetik veri artırma yöntemi kullanılarak oluşturulan veri seti VGG16 modeline ADAM optimizasyon yöntemi uygulanarak %86 başarı oranı elde edilmiştir.
+Proje, [Ocular Disease Recognition](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k) veri setini kullanmaktadır. 
 
 Tespit Edilen Sınıflar:
+
 - Normal
 - Diyabetik Retinopati
 - Katarakt
 - Glokom
+  
+## Kullanılan Yöntemler:
 
-Kullanılan Yöntemler:
-- Veri seti, SMOTE ve ADASYN yöntemleriyle artırılmıştır.
-- VGG16 ve VGG19 derin öğrenme modelleri, SGD, Adagrad ve Adam optimizerları ile eğitilmiştir.
-- Eğitim için Google Colab GPU kullanılmıştır.
-- 
+ **1. Veri Ön İşleme**:
+   - Göz fundus görüntüleri, başlangıçta cv2'nin varsayılan ayarları ile mavi renk tonu (RGB yerine BGR) olarak okunmuştur. Bunu düzeltmek için `cv2.cvtColor(img, cv2.COLOR_BGR2RGB)` kullanılarak başarılı sonuçlar elde edilmiştir.
+   - Görüntüler, `numpy.array` kullanılarak sayısal değerlere dönüştürülmüş ve `sklearn.model_selection.train_test_split` ile eğitim (%80) ve test (%20) verileri olarak ayrılmıştır.
+   - Görüntüler, model giriş boyutlarına uygun olarak yeniden boyutlandırılmış (2224x224x3) ve normalize edilmiştir.
+     
+ **2. Veri seti artırma** yöntemi olarak **SMOTE ve ADASYN** sentetik veri artırma yöntemleri kullanılmıştır.
+
+  **2.1	SMOTE(Synthetic Minority Over-Sampling Technique)**, sentetik veri üretilmesini sağlayan bir aşırı örnekleme sürecidir. Veri bilimi projelerinden en sık kullanılan yöntemlerden biridir.
+      - Yöntemin ana fikri, azınlık sınıfının örnekleri arasında belirli işlemler yaparak yeni azınlık sınıfı örnekleri yaratmaktır.
+      - Sentetik örnekler şu şekilde üretilir:
+        1. İncelenen öznitelik vektörü(𝐸𝑖) ile en yakın komşusu arasındaki farkı alınır,
+        2. Bu farkı 0 ile 1 arasında rastgele bir sayı(𝛿) ile çarpılır,
+        3. Çıkan sonuç incelenen özellik vektörüne eklenir ve yeni örnek oluşur.
+      -	Gereken aşırı örnekleme miktarına bağlı olarak, en yakın k komşudan komşular rastgele seçilir. Bu işlem, aşırı öğrenme sorununun önüne geçer ve iyi bir sınıflandırma performansı ile sunar. 
+
+[Veri Bilimi Okulu - Dengesiz Veri Setlerinde Modelleme](https://www.veribilimiokulu.com/dengesiz-veri-setlerinde-modelleme/#:~:text=SMOTE(Synthetic%20Minority%20Over%2DSampling,yeni%20az%C4%B1nl%C4%B1k%20s%C4%B1n%C4%B1f%C4%B1%20%C3%B6rnekleri%20yaratmakt%C4%B1r. )
+
+  **2.2 Adaptive Synthetic Sampling Method (ADASYN)**
+  
+  •	SMOTE yönteminin geliştirilmiş bir versiyonudur. ADASYN hangi sayıda sentetik veri üreteceğine olasılık dağılım fonksiyonu kullanarak karar verir. [AYDIN, 2021](https://dergipark.org.tr/tr/download/article-file/1095950) Öğrenilmesi zor olan sınıflar için daha fazla sentetik veri üretilir. Böylece dengesiz sınıf dağılımdan dolayı oluşan eğilim azaltılmış olur. [Çürükoğlu, 2019](https://ieeexplore.ieee.org/document/8965444)
+
+
+3. **Model Seçimi ve Eğitim**:
+   - AlexNet, VGG16, VGG19 ve ResNet50 modelleri ile çalışılmıştır.
+   - **Transfer Öğrenme** yöntemi kullanılarak VGG16, VGG19 ve ResNet50 modelleri eğitilmiştir. Modellerin önceden eğitilmiş ağırlıkları `imagenet` veri setinden alınmıştır ve `include_top=False` kullanılarak kendi özel giriş ve çıkış katmanlarımız eklenmiştir. Ayrıca, `layer.trainable=False` parametresi ile modelin ağırlıklarının yeniden öğrenilmesi engellenmiştir.
+   - Her modelin derlenmesinde loss='categorical_crossentropy',  metrics=['accuracy']) kullanılmış ve eğitim sırasında; batch_size=32, epochs= 20, validation_split=0.2 verilmiş olup optimizer da değişiklik yapılarak model eğitimi gerçekleştirilmiştir;
+     - **VGG16**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında sigmoid aktivasyon fonksiyonu kullanılmıştır. 
+     - **VGG19**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında sigmoid aktivasyon fonksiyonu kullanılmıştır. 
+     - **ResNet50**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında softmax aktivasyon fonksiyonu kullanılmıştır. 
+     - **AlexNet**: Çıkış katmanında softmax aktivasyon fonksiyonu kullanılarak eğitim yapılmıştır.
+
+4. Bir makine öğrenmesi/derin öğrenme/yapay sinir ağı modeli tasarladığımızda da amacımız hatayı minimize etmektir. AlexNet, ResNet50, VGG16 ve VGG19 modelleri için aşağıdaki **optimize** ediciler kullanıldı.
+   - **Stochastic Gradient Descent-SDG**
+   - **RMSprop**
+   - **Adagrad**
+   - **Adadelta**
+   - **Adam**
+
+5.**Fonksiyonlar**:
+- Tüm model eğitimleri için oluşturulan ve kullanılan fonksiyonlar;
+   - Model eğitim geçmişi (`acc`, `loss`, `val_loss`, `val_accuracy`) CSV dosyası olarak kaydedilmiştir.
+   - Eğitim geçmişinin her epoch'taki değerleri grafik olarak çizdirilmiştir (train ve validation için `loss` ve `accuracy` değerleri).
+   - Eğitilen model `.h5` formatında kaydedilmiştir ve gerektiğinde tekrar yüklenebilir.
+   - Modelin performansı `confusion matrix` ve `classification report` kullanılarak değerlendirilmiştir.
+
+
+## Kullanılan Teknolojiler
+
+- Python
+- TensorFlow / Keras
+- OpenCV
+- NumPy
+- Scikit-learn
+- Google Colab GPU 
+
+  
+### Sonuçlar
+Gerçekleştirilen çalışmada en iyi sınıflandırma sonucu ADASYN sentetik veri artırma yöntemi kullanılarak oluşturulan veri seti VGG16 modeline ADAM optimizasyon yöntemi uygulanarak %86 başarı oranı elde edilmiştir.
+
 ### Files and Code
 
 [Göz Hastalığı Tespiti](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL) dosyalarında projeye ait tüm kod ve analizler yer almaktadır.

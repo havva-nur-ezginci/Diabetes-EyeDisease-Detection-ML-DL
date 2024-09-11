@@ -135,8 +135,31 @@ Veri seti artırma yöntemi olarak **SMOTE** ve **ADASYN** sentetik veri artırm
    - Modelin performansı `confusion matrix` ve `classification report` kullanılarak değerlendirilmiştir.
 
 
-## Sonuçlar
-Gerçekleştirilen çalışmada en iyi sınıflandırma sonucu ADASYN sentetik veri artırma yöntemi kullanılarak oluşturulan veri seti VGG16 modeline ADAM optimizasyon yöntemi uygulanarak %86 başarı oranı elde edilmiştir.
+## Results
+Gerçekleştirilen çalışmada en iyi sınıflandırma sonucu ADASYN sentetik veri artırma yöntemi kullanılarak oluşturulan veri seti VGG16 modeline ADAM optimizasyon yöntemi uygulanarak %86 başarı oranı elde edilmiştir. En yüksek başarı oranı gösteren modelin eğitim süreci Şekil 1 de gösterilmektedir. Test verisi için elde edilen Confusion matrix Şekil 2 de verilmiştir. 
+ 
+### Şekil 1: Training Process: VGG16 with ADAM Optimizer on ADASYN Dataset
+
+The following image shows the training process of the VGG16 model using the ADAM optimizer on the ADASYN-enhanced dataset.
+
+![Training Process](https://github.com/user-attachments/assets/6d2cead1-7251-4799-b274-da75177a5167)
+
+### Şekil 2: Confusion Matrix: Test Data
+
+Below is the confusion matrix for the test data, which shows the model's performance in predicting different classes.
+
+![Confusion Matrix](https://github.com/user-attachments/assets/89383e43-341e-4ecc-84e3-9e11ee14555d)
+
+### 3. Test Data Class Distribution
+
+- **Normal**: 264 samples  
+- **Cataract**: 128 samples  
+- **Diabetic Retinopathy**: 27 samples  
+- **Glaucoma**: 115 samples
+
+The confusion matrix provides insight into how well the model distinguishes between these different classes in the test dataset.
+
+
    
 ### Files and Code
 

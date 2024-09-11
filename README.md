@@ -138,11 +138,17 @@ Veri seti artırma yöntemi olarak **SMOTE** ve **ADASYN** sentetik veri artırm
 ## Sonuçlar
 Gerçekleştirilen çalışmada en iyi sınıflandırma sonucu ADASYN sentetik veri artırma yöntemi kullanılarak oluşturulan veri seti VGG16 modeline ADAM optimizasyon yöntemi uygulanarak %86 başarı oranı elde edilmiştir.
    
-
-
 ### Files and Code
 
-[Göz Hastalığı Tespiti](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL) dosyalarında projeye ait tüm kod ve analizler yer almaktadır.
+Below are the links to the project files for different data augmentation methods used in the study:
+
+- **ADASYN**: [Diabetes Eye Disease Detection with ADASYN](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Adasyn/Bitirme_2/2_adasyn_DiyabeteBagliGozHastaliklariTespiti.ipynb)
+- **SMOTE**: [Diabetes Eye Disease Detection with SMOTE](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Smote/Bitirme_2/2_smote_DiyabeteBagliGozHastaliklariTespiti.ipynb)
+- **Normal Dataset**: [Diabetes Eye Disease Detection without Data Augmentation](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Normal/Bitirme_2/2_normal_DiyabeteBagliGozHastaliklariTespiti.ipynb)
+
+Each notebook demonstrates the application of different techniques in the detection of diabetic eye diseases.
+
+
 
 # Yayınlar ve Sunumlar
 Bu projeyle ilgili sunum 9. Uluslararası Bilimsel Çalışmalar Kongresi'nde (UBCAK) gerçekleştirilmiştir: [UBCAK9 pdf](https://www.ubcakcongress.org/ubcak9_tam_metin.pdf)

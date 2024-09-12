@@ -292,8 +292,8 @@ DEMİRCAN SEMİYE, Ezginci Havva Nur (03.08.2022-05.08.2022), Yayın Yeri: 9. Ul
 
 ## Teşekkürler 💫
 
-Bu projeyi incelediğiniz ve zaman ayırdığınız için teşekkür ederim. 
-Yapay zeka alanındaki bu tür çalışmalar,🏥 sağlık sektöründe 🌟 önemli değişikliklere yol açabilir.
+Bu projeyi incelediğiniz ve zaman ayırdığınız için teşekkür ederim.🌟
+Yapay zeka alanındaki bu tür çalışmalar,🏥 sağlık sektöründe önemli değişikliklere yol açabilir.
 🎉 Umarım bu proje size ilham verir ve sizin için faydalı olur. 
 
 İyi kodlamalar 💻 ve harika projeler! 💪😄

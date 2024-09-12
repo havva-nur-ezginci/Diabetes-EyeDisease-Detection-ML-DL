@@ -167,7 +167,7 @@ Veri setinden alınmış örnek fundus fotoğrafları:
    - Göz fundus görüntüleri, başlangıçta cv2'nin varsayılan ayarları ile mavi renk tonu (RGB yerine BGR) olarak okunmuştur. Bunu düzeltmek için `cv2.cvtColor(img, cv2.COLOR_BGR2RGB)` kullanılarak başarılı sonuçlar elde edilmiştir.
    - Görüntüler, `numpy.array` kullanılarak sayısal değerlere dönüştürülmüş ve `sklearn.model_selection.train_test_split` ile eğitim (%80) ve test (%20) verileri olarak ayrılmıştır.
    - Görüntüler, model giriş boyutlarına uygun olarak yeniden boyutlandırılmış (2224x224x3) ve normalize edilmiştir.
-   - Eğitim sırasında aşırı öğrenmenin önüne geçmek için, sağlıklı veri sayısının fazlalığından kaynaklanan dengesizlikler giderildi. İlk olarak, sağlıklı veri sınıfından rastgele fundus fotoğrafı seçilerek veri sayısı azaltıldı. Ancak veri seti hala dengesiz olduğundan, SMOTE ve ADASYN gibi veri artırma yöntemleri kullanılarak dengeli veri setleri oluşturuldu.
+   - Eğitim sırasında aşırı öğrenmenin önüne geçmek için, sağlıklı veri sayısının fazlalığından kaynaklanan dengesizlikler giderildi. İlk olarak, sağlıklı veri sınıfından rastgele fundus fotoğrafı seçilerek veri sayısı azaltıldı. Ancak veri seti hala dengesiz olduğundan, **SMOTE ve ADASYN** gibi veri artırma yöntemleri kullanılarak dengeli veri setleri oluşturuldu.
 
 ## 2. Veri Seti Artırma
 Veriler, ilk hali dışında **SMOTE** ve **ADASYN** sentetik veri artırma yöntemleri kullanılarak dengeli veri setlerine dönüştürülmüştür.
@@ -190,10 +190,21 @@ Veriler, ilk hali dışında **SMOTE** ve **ADASYN** sentetik veri artırma yön
   
   - SMOTE yönteminin geliştirilmiş bir versiyonudur. ADASYN hangi sayıda sentetik veri üreteceğine olasılık dağılım fonksiyonu kullanarak karar verir. [AYDIN, 2021](https://dergipark.org.tr/tr/download/article-file/1095950) Öğrenilmesi zor olan sınıflar için daha fazla sentetik veri üretilir. Böylece dengesiz sınıf dağılımdan dolayı oluşan eğilim azaltılmış olur. [Çürükoğlu, 2019](https://ieeexplore.ieee.org/document/8965444)
 
+**Eğitim (train)** için kullanılan veri setleri (D.Retinopati, Katarakt, Glokom, Sağlıklı veri seti):
+
+| Veri Seti       | Normal (Sağlıklı) | Katarakt | Diyabetik Retinopati | Glokom |
+|-----------------|------------------|----------|----------------------|--------|
+| **Veri Seti 1** | 1076             | 460      | 132                  | 467    |
+| **Veri Seti 2** | 640              | 640      | 640                  | 640    |
+| **Veri Seti 3** | 1076             | 467      | 1117                 | 467    |
+
+**Veri Seti 1:** Sağlıklı veri sınıfı random olarak azalttığımız ve diyabetik retinopati, katarakt, glokom sınıflarının orijinal hallerinden oluşan veri setidir.<br>
+**Veri Seti 2:** Sağlıklı sınıftan rastgele seçilen görüntüler ile diyabetik retinopati, katarakt ve glokom sınıfları birleştirilmiş, SMOTE yöntemiyle dengelenmiş veri setidir.<br>
+**Veri Seti 3:** Veri Seti 1'den faydalanılarak ADASYN yöntemiyle oluşturulmuş dengeli veri setidir.<br>
 
 ## 3. Model Seçimi ve Eğitim
    - Oluşturulan veri setleri, **state-of-the-art** olarak bilinen **VGG16, VGG19, ResNet50 ve AlexNet** bu modellerle eğitim gerçekleştirilmiştir.
-   - **Transfer Öğrenme** yöntemi kullanılarak **VGG16, VGG19 ve ResNet50** modelleri eğitilmiştir. Modellerin önceden eğitilmiş ağırlıkları `imagenet` veri setinden alınmıştır ve **`include_top=False`** kullanılarak kendi özel giriş ve çıkış katmanlarımız eklenmiştir. Ayrıca, **`layer.trainable=False`** parametresi ile modelin ağırlıklarının yeniden öğrenilmesi engellenmiştir. Modeller, **tensorflow.keras.applications** kütüphanesinden alınarak kullanılmıştır.
+   - **Transfer Öğrenme** yöntemi kullanılarak **VGG16, VGG19 ve ResNet50** modelleri eğitilmiştir. Modellerin önceden eğitilmiş ağırlıkları `imagenet` veri setinden alınmıştır ve **`include_top=False`** kullanılarak kendi özel giriş ve çıkış katmanlarımız eklenmiştir. Ayrıca, **`layer.trainable=False`** parametresi ile modelin ağırlıklarının yeniden öğrenilmesi engellenmiş ve sadece eklenen katmanlar eğitilmiştir. Modeller, **tensorflow.keras.applications** kütüphanesinden alınarak kullanılmıştır.
    - Her modelin derlenmesinde loss='categorical_crossentropy', başarı metrics=['accuracy']) kullanılmış ve eğitim sırasında; batch_size=32, epochs= 20, validation_split=0.2 verilmiş olup optimizer da değişiklik yapılarak model eğitimi gerçekleştirilmiştir;
      - **VGG16**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında sigmoid aktivasyon fonksiyonu kullanılmıştır. 
      - **VGG19**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında sigmoid aktivasyon fonksiyonu kullanılmıştır. 
@@ -202,6 +213,7 @@ Veriler, ilk hali dışında **SMOTE** ve **ADASYN** sentetik veri artırma yön
 
 ## 4. Optimizer Kullanımı
 - Bir makine öğrenmesi/derin öğrenme/yapay sinir ağı modeli tasarladığımızda da amacımız hatayı minimize etmektir. AlexNet, ResNet50, VGG16 ve VGG19 modelleri için aşağıdaki **optimize** ediciler kullanıldı.
+  
    - **Stochastic Gradient Descent-SDG**
    - **RMSprop**
    - **Adagrad**

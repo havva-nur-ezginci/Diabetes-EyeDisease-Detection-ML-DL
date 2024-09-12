@@ -22,8 +22,9 @@ Bu proje, diyabetin ve diyabete bağlı göz hastalıklarının tespitini gerçe
     - [2. Veri Seti Artırma](#2-veri-seti-artırma)
     - [3. Model Seçimi ve Eğitim](#3-model-seçimi-ve-eğitim)
     - [4. Optimizer Kullanımı](#4-optimizer-kullanımı)
+    - [5. Ortak Fonksiyonlar](#5-ortak-fonksiyonlar)
   - [Results](#results)
-  - [Files and Code](#files-and-code)
+  - [Files and Codes](#files-and-codes)
 
 - [Publications and Presentations](#publications-and-presentations)
 
@@ -240,7 +241,7 @@ Veriler, ilk hali dışında **SMOTE** ve **ADASYN** sentetik veri artırma yön
    - **Adadelta**
    - **Adam**
 
-## 5. Fonksiyonlar:
+## 5. Ortak Fonksiyonlar:
 - Tüm model eğitimleri için oluşturulan ve kullanılan fonksiyonlar;
    - Model eğitim geçmişi (`acc`, `loss`, `val_loss`, `val_accuracy`) CSV dosyası olarak kaydedilmiştir.
    - Eğitim geçmişinin her epoch'taki değerleri grafik olarak çizdirilmiştir (train ve validation için `loss` ve `accuracy` değerleri).
@@ -274,7 +275,7 @@ The confusion matrix provides insight into how well the model distinguishes betw
 
 
    
-### Files and Code
+### Files and Codes
 
 Below are the links to the project files for different data augmentation methods used in the study:
 

@@ -7,7 +7,7 @@ Bu proje, diyabetin ve diyabete bağlı göz hastalıklarının tespitini gerçe
 - [Diyabet Tespiti](#diyabet-tespiti)
   - [Kullanılan Veri Seti](#kullanılan-veri-seti)
   - [Kullanılan Modeller](#kullanılan-modeller)
-  - [Yöntemler ve İyileştirmeler](#yöntemler-ve-iyileştirmeler)
+  - [Methods and Improvements](#methods-and-improvements)
   - [Eğitim ve Test Sonuçları](#eğitim-ve-test-sonuçları)
   - [Files and Code](#files-and-code)
   
@@ -66,7 +66,8 @@ Projede aşağıdaki makine öğrenmesi modelleri kullanılmıştır:
 - Gaussian Naive Bayes
 - Random Forest Classifier
 
-### Yöntemler ve İyileştirmeler
+### Methods and Improvements
+Yöntemler ve İyileştirmeler
 
 1. **Veri ön işleme** adımı kapsamında, model eğitiminin daha tutarlı ve dengeli olmasını sağlamak amacıyla **StandardScaler** kullanılarak sayısal değişkenler ölçeklendirildi. Bu işlem, her bir değişkenin ortalamasını 0, standart sapmasını 1 yaparak, farklı büyüklüklerdeki verilerin model üzerinde eşit etkiye sahip olmasını sağladı.
 2. **Karar Ağacı**: Aşırı öğrenmeyi önlemek için max_depth parametresi kullanılarak erken budama ile sınırlama yapılmıştır(max_depth=5). Karar ağacının özellikler için vermiş olduğu önem değerleri incelenmiştir. Her özellik için 0 ile 1 arasında bir sayıdır; 0=>"hiç kullanılmamış" ve 1 => "hedefi mükemmel şekilde tahmin ediyor" anlamına gelir. Alınan sonuçlar için matplotlib.pyplot kullanarak grafik çizdirilmiş ve değerler Tablo 1 de görselleştirilmiştir:

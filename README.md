@@ -1,7 +1,7 @@
-# Diyabet ve Diyabete Bağlı Göz Hastalıkları Tespiti: Makine ve Derin Öğrenme Yöntemleri
+# Diyabet ve Diyabete Bağlı Göz Hastalıkları Tespiti: Makine ve Derin Öğrenme Yöntemleri 👩‍💻📊🩺
 [![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue?logo=kaggle)](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k)
 
-Bu proje, diyabetin ve diyabete bağlı göz hastalıklarının tespitini gerçekleştirmek için makine öğrenmesi ve derin öğrenme yöntemlerinin uygulanmasını içermektedir. Çalışma iki ana başlık altında toplanmıştır: diyabet tespiti ve göz hastalığı tespiti.
+Bu proje, diyabetin ve diyabete bağlı göz hastalıklarının tespitini gerçekleştirmek için makine öğrenmesi ve derin öğrenme yöntemlerinin uygulanmasını içermektedir. Çalışma iki ana başlık altında toplanmıştır: diyabet tespiti ve göz hastalığı tespiti.👁️💻
 
 ## Table of Contents
 - [Diyabet Tespiti](#diyabet-tespiti)
@@ -30,7 +30,7 @@ Bu projede, Kaggle'dan alınan kan değerleri veri seti kullanılarak diyabet te
 
 ### Kullanılan Veri Seti
 
-- **Kaynak**: [Diabetes](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Diyabet_Tespiti/Dataset/Diyabet/diabetes.csv) veri seti projeye eklenerek kullanılmıştır.
+- **Kaynak**: [Diabetes](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Diyabet_Tespiti/Dataset/Diyabet/diabetes.csv) veri seti projeye eklenerek kullanılmıştır.🩸
 - **Bölme**: Veri seti %80 eğitim, %20 test olarak ayrılmıştır.
 
 <details> 
@@ -159,7 +159,7 @@ Diyabet (şeker hastalığı), obezite, hareketsiz yaşam, dengesiz beslenme, ya
 ## Veri Seti
 [![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue?logo=kaggle)](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k)
 
-Çalışmada Kaggle'dan alınan **[Ocular Disease Intelligent Recognition (ODIR)](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k)** veri seti kullanılmıştır. 
+Çalışmada Kaggle'dan alınan **[Ocular Disease Intelligent Recognition (ODIR)](https://www.kaggle.com/datasets/andrewmvd/ocular-disease-recognition-odir5k)** veri seti kullanılmıştır. 👁️
 
 <details>
    <summary><strong>Learn More</strong></summary> 
@@ -284,11 +284,19 @@ Each notebook demonstrates the application of different techniques in the detect
 
 
 
-# Publications and Presentations
+## Publications and Presentations
 Bu projeyle ilgili sunum 9. Uluslararası Bilimsel Çalışmalar Kongresi'nde (UBCAK) gerçekleştirilmiştir: [UBCAK9 pdf](https://www.ubcakcongress.org/ubcak9_tam_metin.pdf)
 ### Göz Fundus Görüntülerinden Diyabetin Sebep Olduğu Göz Hastalıklarının Tespiti
 DEMİRCAN SEMİYE, Ezginci Havva Nur (03.08.2022-05.08.2022), Yayın Yeri: 9. Uluslararası Bilimsel Çalışmalar Kongresi (UBCAK)
 <br>Yayın Türü: Ulusal Tam Metin Bildiri (Basılı + Elektronik)
+
+## Teşekkürler 💫
+
+Bu projeyi incelediğiniz ve zaman ayırdığınız için teşekkür ederim. 
+Yapay zeka alanındaki bu tür çalışmalar,🏥 sağlık sektöründe 🌟 önemli değişikliklere yol açabilir.
+🎉 Umarım bu proje size ilham verir ve sizin için faydalı olur. 
+
+İyi kodlamalar 💻 ve harika projeler! 💪😄
 
 ## License
 

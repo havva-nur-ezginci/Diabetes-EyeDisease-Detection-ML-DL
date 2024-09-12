@@ -7,6 +7,26 @@ Bu proje, diyabetin ve diyabete bağlı göz hastalıklarının tespitini gerçe
 - [Diyabet Tespiti](#diyabet-tespiti)
 - [Göz Hastalığı Tespiti](#göz-hastalığı-tespiti)
 
+## Table of Contents
+- [Diyabet Tespiti](#diyabet-tespiti)
+  - [Kullanılan Veri Seti](#kullanılan-veri-seti)
+  - [Kullanılan Modeller](#kullanılan-modeller)
+  - [Yöntemler ve İyileştirmeler](#yöntemler-ve-iyileştirmeler)
+  - [Eğitim ve Test Sonuçları](#eğitim-ve-test-sonuçları)
+  - [Files and Code](#files-and-code)
+  
+- [Göz Hastalığı Tespiti](#göz-hastalığı-tespiti)
+  - [Veri Seti](#veri-seti)
+  - [Kullanılan Yöntemler](#kullanılan-yöntemler)
+    - [1. Veri Ön İşleme](#1-veri-ön-işleme)
+    - [2. Veri Seti Artırma](#2-veri-seti-artırma)
+    - [3. Model Seçimi ve Eğitim](#3-model-seçimi-ve-eğitim)
+    - [4. Optimizer Kullanımı](#4-optimizer-kullanımı)
+  - [Results](#results)
+  - [Files and Code](#files-and-code)
+
+- [Publications and Presentations](#publications-and-presentations)
+
 ## Diyabet Tespiti 
 
 Bu projede, Kaggle'dan alınan kan değerleri veri seti kullanılarak diyabet tespiti amacıyla çeşitli makine öğrenmesi modelleri uygulanmıştır. Farklı modellerin performansı karşılaştırılmış, en iyi sonucu veren model belirlenmiştir.

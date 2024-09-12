@@ -167,6 +167,7 @@ Veri setinden alınmış örnek fundus fotoğrafları:
    - Göz fundus görüntüleri, başlangıçta cv2'nin varsayılan ayarları ile mavi renk tonu (RGB yerine BGR) olarak okunmuştur. Bunu düzeltmek için `cv2.cvtColor(img, cv2.COLOR_BGR2RGB)` kullanılarak başarılı sonuçlar elde edilmiştir.
    - Görüntüler, `numpy.array` kullanılarak sayısal değerlere dönüştürülmüş ve `sklearn.model_selection.train_test_split` ile eğitim (%80) ve test (%20) verileri olarak ayrılmıştır.
    - Görüntüler, model giriş boyutlarına uygun olarak yeniden boyutlandırılmış (2224x224x3) ve normalize edilmiştir.
+   - Eğitim sırasında aşırı öğrenmenin önüne geçmek için, sağlıklı veri sayısının fazlalığından kaynaklanan dengesizlikler giderildi. İlk olarak, sağlıklı veri sınıfından rastgele fundus fotoğrafı seçilerek veri sayısı azaltıldı. Ancak veri seti hala dengesiz olduğundan, SMOTE ve ADASYN gibi veri artırma yöntemleri kullanılarak dengeli veri setleri oluşturuldu.
 
 ## 2. Veri Seti Artırma
 Veriler, ilk hali dışında **SMOTE** ve **ADASYN** sentetik veri artırma yöntemleri kullanılarak dengeli veri setlerine dönüştürülmüştür.
@@ -192,8 +193,8 @@ Veriler, ilk hali dışında **SMOTE** ve **ADASYN** sentetik veri artırma yön
 
 ## 3. Model Seçimi ve Eğitim
    - Oluşturulan veri setleri, **state-of-the-art** olarak bilinen **VGG16, VGG19, ResNet50 ve AlexNet** bu modellerle eğitim gerçekleştirilmiştir.
-   - **Transfer Öğrenme** yöntemi kullanılarak VGG16, VGG19 ve ResNet50 modelleri eğitilmiştir. Modellerin önceden eğitilmiş ağırlıkları `imagenet` veri setinden alınmıştır ve `include_top=False` kullanılarak kendi özel giriş ve çıkış katmanlarımız eklenmiştir. Ayrıca, `layer.trainable=False` parametresi ile modelin ağırlıklarının yeniden öğrenilmesi engellenmiştir.
-   - Her modelin derlenmesinde loss='categorical_crossentropy',  metrics=['accuracy']) kullanılmış ve eğitim sırasında; batch_size=32, epochs= 20, validation_split=0.2 verilmiş olup optimizer da değişiklik yapılarak model eğitimi gerçekleştirilmiştir;
+   - **Transfer Öğrenme** yöntemi kullanılarak **VGG16, VGG19 ve ResNet50** modelleri eğitilmiştir. Modellerin önceden eğitilmiş ağırlıkları `imagenet` veri setinden alınmıştır ve **`include_top=False`** kullanılarak kendi özel giriş ve çıkış katmanlarımız eklenmiştir. Ayrıca, **`layer.trainable=False`** parametresi ile modelin ağırlıklarının yeniden öğrenilmesi engellenmiştir. Modeller, **tensorflow.keras.applications** kütüphanesinden alınarak kullanılmıştır.
+   - Her modelin derlenmesinde loss='categorical_crossentropy', başarı metrics=['accuracy']) kullanılmış ve eğitim sırasında; batch_size=32, epochs= 20, validation_split=0.2 verilmiş olup optimizer da değişiklik yapılarak model eğitimi gerçekleştirilmiştir;
      - **VGG16**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında sigmoid aktivasyon fonksiyonu kullanılmıştır. 
      - **VGG19**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında sigmoid aktivasyon fonksiyonu kullanılmıştır. 
      - **ResNet50**: Flatten ve dense çıkış katmanı eklendi ve çıkış katmanında softmax aktivasyon fonksiyonu kullanılmıştır. 
@@ -245,9 +246,9 @@ The confusion matrix provides insight into how well the model distinguishes betw
 
 Below are the links to the project files for different data augmentation methods used in the study:
 
-- **ADASYN**: [Diabetes Eye Disease Detection with ADASYN](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Adasyn/Bitirme_2/2_adasyn_DiyabeteBagliGozHastaliklariTespiti.ipynb)
-- **SMOTE**: [Diabetes Eye Disease Detection with SMOTE](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Smote/Bitirme_2/2_smote_DiyabeteBagliGozHastaliklariTespiti.ipynb)
-- **Normal Dataset**: [Diabetes Eye Disease Detection without Data Augmentation](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/blob/main/Normal/Bitirme_2/2_normal_DiyabeteBagliGozHastaliklariTespiti.ipynb)
+- **ADASYN**: [Diabetes Eye Disease Detection with ADASYN](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/tree/main/Adasyn/Bitirme_2)
+- **SMOTE**: [Diabetes Eye Disease Detection with SMOTE](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/tree/main/Smote/Bitirme_2)
+- **Normal Dataset**: [Diabetes Eye Disease Detection without Data Augmentation](https://github.com/havva-nur-ezginci/Diabetes-EyeDisease-Detection-ML-DL/tree/main/Normal/Bitirme_2)
 
 Each notebook demonstrates the application of different techniques in the detection of diabetic eye diseases.
 

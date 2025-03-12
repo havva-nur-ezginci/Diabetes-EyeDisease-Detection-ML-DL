@@ -247,7 +247,7 @@ Veriler, ilk hali dışında **SMOTE** ve **ADASYN** sentetik veri artırma yön
 
 
 ## Results
-Farklı modellerin performansı karşılaştırılmış, en iyi sonucu veren model belirlenmiştir. Sonuç olarak elde edilen en yüksek başarı oranı **ADASYN** yöntemi ile artırılan veri setinin **VGG16** modelini **Adam** optimizerı ile eğittiğimizde test verisi üzerinde %86 başarı ve %43 Loss (Categorical Cross-Entropy) oranı elde edilmiştir. En yüksek başarı oranı gösteren modelin eğitim süreci Şekil 1 de gösterilmektedir. Test verisi için elde edilen Confusion matrix Şekil 2 de verilmiştir. 
+Farklı modellerin performansı karşılaştırılmış, en iyi sonucu veren model belirlenmiştir. Sonuç olarak elde edilen en yüksek başarı oranı **ADASYN** yöntemi ile artırılan veri setinin **VGG16** modelini **Adam** optimizerı ile eğittiğimizde test verisi üzerinde %86 başarı ve 0.43 Loss (Categorical Cross-Entropy) oranı elde edilmiştir. En yüksek başarı oranı gösteren modelin eğitim süreci Şekil 1 de gösterilmektedir. Test verisi için elde edilen Confusion matrix Şekil 2 de verilmiştir. 
  
 ### Şekil 1: Training Process: VGG16 with ADAM Optimizer on ADASYN Dataset
 
